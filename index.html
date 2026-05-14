@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>S3CR3T_CODER_v1.0.6</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="terminal">
+        <div class="title-bar">S3CR3T CODING TERMINAL - SESSION: ADMIN</div>
+        
+        <div class="content">
+            <p class="status-text">> SYSTEM READY... <br>> ENCRYPTION: ACTIVE</p>
+            
+            <hr>
+
+            <div class="input-section">
+                <label>ENTRÉE :</label>
+                <textarea id="input" rows="4" placeholder="Saisir texte ou code..."></textarea>
+            </div>
+
+            <div class="controls">
+                <button onclick="lancerTraitement('coder')">[ ENCODER ]</button>
+                <button onclick="lancerTraitement('decoder')">[ DÉCODER ]</button>
+            </div>
+
+            <!-- Loader de 3 secondes -->
+            <div id="loader" class="loader" style="display: none;">
+                <p>TRAITEMENT EN COURS...</p>
+                <div class="progress-bar">
+                    <div id="progress" class="progress-fill"></div>
+                </div>
+                <p class="blink">Veuillez patienter...</p>
+            </div>
+
+            <div class="result-section">
+                <label>RÉSULTAT :</label>
+                <div id="output" class="output-box">_</div>
+                <button onclick="copier()" class="btn-small">COPIER LE RÉSULTAT</button>
+            </div>
+
+            <hr>
+
+            <!-- Nouveau bouton pour accéder au login -->
+            <div class="security-access">
+                <button id="btn-show-login" onclick="toggleLogin()">[ ACCÈS SÉCURISÉ ]</button>
+            </div>
+
+            <!-- Zone de login cachée par défaut -->
+            <div id="login-zone" class="security-lock" style="display: none;">
+                <h3>AUTH_REQUIRED</h3>
+                <div class="lock-container">
+                    <span id="lock-icon">🔒</span>
+                    <div class="code-inputs">
+                        <input type="text" id="pass1" maxlength="2" placeholder="00"> - 
+                        <input type="text" id="pass2" maxlength="1" placeholder="0"> - 
+                        <input type="text" id="pass3" maxlength="2" placeholder="00">
+                    </div>
+                    <button onclick="verifierMotDePasse()">VALIDER</button>
+                </div>
+                
+                <div id="secret-key-area" style="display: none;">
+                    <p>BASE DE DONNÉES ALPHABET :</p>
+                    <div class="key-grid" id="key-display"></div>
+                </div>
+            </div>
+        </div>
+        <p class="footer">© 2026 SECRET-CORP SYSTEMS - PROPULSE PAR LA D.G.S.I</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
